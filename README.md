@@ -22,6 +22,7 @@ git clone  https://github.com/GabrielShell/LaravelProjectBasic.git
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 ```
+*  复制.env.example到.env
 
 *  配置好.env文件中的数据库信息
 
