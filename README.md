@@ -25,7 +25,7 @@ mv composer.phar /usr/local/bin/composer
 
 *  在克隆下来的git库运行
 ```bash
-composer update
+composer install
 php artisan migrate
 php artisan db:seed
 chmod -R 777 storage/
