@@ -23,6 +23,8 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 ```
 
+*  配置好.env文件中的数据库信息
+
 *  在克隆下来的git库运行
 ```bash
 composer install
