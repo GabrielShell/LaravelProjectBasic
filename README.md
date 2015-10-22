@@ -24,7 +24,7 @@ mv composer.phar /usr/local/bin/composer
 ```
 *  复制.env.example到.env
 
-*  配置好.env文件中的数据库信息，运行:
+*  Mysql中新建一个数据库，配置好.env文件中的数据库信息，运行:
 ```bash
 php artisan key:generate
 ```
