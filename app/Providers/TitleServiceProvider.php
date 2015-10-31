@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Func\Support\View\TitleContainer;
 
-class AppServiceProvider extends ServiceProvider
+class TitleServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('title',function(){
+            return new TitleContainer();
+        });
     }
 }

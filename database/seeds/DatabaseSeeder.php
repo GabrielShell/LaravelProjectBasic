@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(LocationSeeder::class);
+        $this->call(OptionSeeder::class);
 
         Model::reguard();
     }

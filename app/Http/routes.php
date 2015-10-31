@@ -1,4 +1,5 @@
 <?php
+use App\Option;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,14 +12,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-// Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::group([],function(){
 
-// Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+    //设置站点名为后缀
+    Title::addSuffix(Option::get('site_name'));
+
+    Route::get('/', ['middleware'=>'pretitle:首页',function () {
+        return view('welcome');
+    }]);
+    // Authentication routes...
+    Route::get('auth/login', 'Auth\AuthController@getLogin');
+    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+    // Registration routes...
+    Route::get('auth/register', 'Auth\AuthController@getRegister');
+    Route::post('auth/register', 'Auth\AuthController@postRegister');
+});
