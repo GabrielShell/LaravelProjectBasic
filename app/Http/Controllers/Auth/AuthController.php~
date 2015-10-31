@@ -28,11 +28,8 @@ class AuthController extends Controller
      *
      * @return void
      */
-
 	//登录后跳转页面
 	protected $redirectPath = '/person_center';
-
-
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
